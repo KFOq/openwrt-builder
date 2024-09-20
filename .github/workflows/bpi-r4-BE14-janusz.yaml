@@ -67,6 +67,9 @@ jobs:
           curl -SL https://raw.githubusercontent.com/danpawlik/openwrt-builder/master/configs/common/lte-5g-modem >> .config
           curl -SL https://raw.githubusercontent.com/danpawlik/openwrt-builder/master/configs/common/community >> .config
 
+          echo "CONFIG_PACKAGE_sqm-scripts=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-sqm=y" >> .config
+
       - name: Run defconfig
         run: |
           make defconfig
